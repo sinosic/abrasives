@@ -1,0 +1,794 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Ocean Industrial Limited</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4A90E2',
+                        secondary: '#8FB4E9',
+                        accent: '#E6B800',
+                        light: '#F8FAFC',
+                        dark: '#334155'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .transition-custom {
+                transition: all 0.3s ease;
+            }
+            .metal-effect {
+                background: linear-gradient(145deg, rgba(255,255,255,0.8), rgba(220,220,220,0.4));
+                border: 1px solid rgba(255,255,255,0.6);
+            }
+            .metal-button {
+                background: linear-gradient(145deg, #6BA5E7, #4A90E2);
+                border: 1px solid rgba(255,255,255,0.3);
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+            }
+            .metal-button:hover {
+                background: linear-gradient(145deg, #7BB0EE, #5A9AE5);
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08);
+                transform: translateY(-2px);
+            }
+        }
+    </style>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #E6F0FB 0%, #B3D4F4 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-scrolled {
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .metal-border {
+            position: relative;
+            border: 1px solid #B3D4F4;
+            box-shadow: 0 0 5px rgba(179, 212, 244, 0.5);
+        }
+        
+        .metal-border::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-primary transition-colors">
+                Start Ocean Industrial Limited
+            </a>
+            
+            <!-- Mobile menu button -->
+            <button id="menu-toggle" class="md:hidden text-primary focus:outline-none">
+                <i class="fa fa-bars text-2xl"></i>
+            </button>
+            
+            <!-- Desktop menu -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-primary hover:text-accent transition-colors font-medium">Home</a>
+                <a href="#products" class="text-primary hover:text-accent transition-colors font-medium">Products</a>
+                <a href="#applications" class="text-primary hover:text-accent transition-colors font-medium">Applications</a>
+                <a href="#contact" class="text-primary hover:text-accent transition-colors font-medium">Contact Us</a>
+            </nav>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="#home" class="text-primary hover:text-accent py-2 transition-colors font-medium">Home</a>
+                <a href="#products" class="text-primary hover:text-accent py-2 transition-colors font-medium">Products</a>
+                <a href="#applications" class="text-primary hover:text-accent py-2 transition-colors font-medium">Applications</a>
+                <a href="#contact" class="text-primary hover:text-accent py-2 transition-colors font-medium">Contact Us</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-28 pb-20 md:pt-40 md:pb-32">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-primary leading-tight mb-6 text-shadow">
+                        Advanced Industrial <br>Materials Solutions
+                    </h1>
+                    <p class="text-dark/90 text-lg md:text-xl mb-8 max-w-lg">
+                        We specialize in manufacturing high-quality abrasives and refractories for various industrial applications.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#products" class="metal-button text-white px-8 py-3 rounded-md font-semibold transition-custom">
+                            Explore Products
+                        </a>
+                        <a href="#contact" class="bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-md font-semibold hover:bg-primary/10 transition-custom">Contact Us</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 metal-border p-1 rounded-lg">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/0485c9556afc40cca78e5185a2c635f3~tplv-a9rns2rl98-image.image?rcl=202508251100134C0FD851492A39250218&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695613&amp;x-signature=jYJdO8XTGIiJ9mh3Fn2dyLMJ0qc%3D" alt="Industrial materials production facility" class="rounded-lg w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-primary mb-4">About Start Ocean Industrial Limited</h2>
+                <div class="w-20 h-1 bg-accent mx-auto"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 metal-border p-1 rounded-lg">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/eaba1812cc8e49b2b50d73b9a9ced047~tplv-a9rns2rl98-image.image?rcl=202508251100291F6D4EE555C4B521A8B1&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695629&amp;x-signature=GvCzsuUp6tvJXeJUrAT4cgPioDg%3D" alt="Company factory and facilities" class="rounded-lg w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-primary mb-4">Our Company</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Start Ocean Industrial Limited is a leading manufacturer and supplier of high-quality industrial materials, 
+                        specializing in silicon carbide and alumina-based abrasives and refractories. With years of experience in 
+                        the industry, we are committed to providing innovative solutions for various industrial applications.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Our state-of-the-art production facilities and strict quality control processes ensure that our products 
+                        meet the highest international standards, delivering exceptional performance and value to our customers worldwide.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6 mt-8">
+                        <div class="flex items-start">
+                            <i class="fa fa-check-circle text-accent text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-primary">Quality Assurance</h4>
+                                <p class="text-gray-600 text-sm">Strict quality control processes</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa fa-globe text-accent text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-primary">Global Reach</h4>
+                                <p class="text-gray-600 text-sm">Exporting to worldwide markets</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa fa-cogs text-accent text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-primary">Advanced Technology</h4>
+                                <p class="text-gray-600 text-sm">Innovative production methods</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fa fa-users text-accent text-xl mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold text-primary">Expert Team</h4>
+                                <p class="text-gray-600 text-sm">Skilled professionals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-primary mb-4">Our Products</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We offer a comprehensive range of high-quality industrial materials designed to meet the needs of various industries.
+                </p>
+            </div>
+            
+            <!-- Product Categories -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="product-filter active px-6 py-2 rounded-md metal-button text-white font-medium transition-custom">All Products</button>
+                <button class="product-filter px-6 py-2 rounded-md bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-custom">
+                    SiC Abrasives
+                </button>
+                <button class="product-filter px-6 py-2 rounded-md bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-custom">
+                    SiC Refractories
+                </button>
+                <button class="product-filter px-6 py-2 rounded-md bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-custom">Alumina Abrasives</button>
+                <button class="product-filter px-6 py-2 rounded-md bg-gray-200 text-gray-700 font-medium hover:bg-gray-300 transition-custom">GreenSiliconCarbide</button>
+            </div>
+            
+            <!-- Product Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card card-hover bg-white rounded-lg shadow-md overflow-hidden metal-border" data-category="sic-abrasives">
+                    <div class="relative">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/fa621ef68926417c939425ed2c234146~tplv-a9rns2rl98-image.image?rcl=202508251100464C0FD851492A39250D6E&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695646&amp;x-signature=Zi%2FK%2F1zM9eu%2FXjNaqbPY%2FroBunY%3D" alt="Silicon Carbide Abrasives" class="w-full h-60 object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-semibold px-3 py-1 rounded-full">BSiC Abrasives</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Silicon Carbide Abrasives</h3>
+                        <p class="text-gray-600 mb-4">
+                            High-performance SiC abrasives for precision grinding and polishing applications in various industries.
+                        </p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-1">Key Specifications:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• Grit sizes: 8# to 2000#</li>
+                                <li>• Purity: 98% to 99%</li>
+                                <li>• Forms: Blocks, grains, powders</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-accent font-semibold hover:underline">
+                            Learn more <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card card-hover bg-white rounded-lg shadow-md overflow-hidden metal-border" data-category="sic-refractories">
+                    <div class="relative">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/9e7c7e00bc444152997762b2080139be~tplv-a9rns2rl98-image.image?rcl=202508251101134C0FD851492A392516E5&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695673&amp;x-signature=wAWrQHBrAKgxPL3nkWXYpMxEw1U%3D" alt="Silicon Carbide Refractories" class="w-full h-60 object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-semibold px-3 py-1 rounded-full">SiC Refractories</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Silicon Carbide Refractories</h3>
+                        <p class="text-gray-600 mb-4">
+                            Durable SiC refractory products designed for high-temperature industrial applications requiring exceptional thermal conductivity.
+                        </p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-1">Key Specifications:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• Max temperature: 1600°C</li>
+                                <li>• Density: 2.6-3.0 g/cm³</li>
+                                <li>• Forms: Bricks, castables, mortars</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-accent font-semibold hover:underline">
+                            Learn more <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card card-hover bg-white rounded-lg shadow-md overflow-hidden metal-border" data-category="alumina-abrasives">
+                    <div class="relative">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/dfb2d78f8256464f92296e79712a35ae~tplv-a9rns2rl98-image.image?rcl=202508251101251F6D4EE555C4B521B827&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695686&amp;x-signature=6YUhluhQz8xvnRQ0xR8gLJbmXPc%3D" alt="Alumina Abrasives" class="w-full h-60 object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-semibold px-3 py-1 rounded-full">
+                            Alumina Abrasives
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Alumina Abrasives</h3>
+                        <p class="text-gray-600 mb-4">
+                            High-purity alumina abrasives ideal for surface preparation, deburring, and finishing operations.
+                        </p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-1">Key Specifications:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• Grit sizes: 12# to 5000#</li>
+                                <li>• Purity: 85% to 99.5%</li>
+                                <li>• Hardness: 9 Mohs</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-accent font-semibold hover:underline">
+                            Learn more <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card card-hover bg-white rounded-lg shadow-md overflow-hidden metal-border" data-category="alumina-refractories">
+                    <div class="relative">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/06f04726d3ae44d8adb68537e1e6c24a~tplv-a9rns2rl98-image.image?rcl=202508251101357D490F6C473F5E6AAF96&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695695&amp;x-signature=WSlmzMiE7cPYNev77wsBXe1OmDY%3D" alt="Alumina Refractories" class="w-full h-60 object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-semibold px-3 py-1 rounded-full">
+                            Alumina Refractories
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Alumina Refractories</h3>
+                        <p class="text-gray-600 mb-4">
+                            Premium alumina refractory products offering excellent resistance to high temperatures and chemical corrosion.
+                        </p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-1">Key Specifications:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• Max temperature: 1800°C</li>
+                                <li>• Alumina content: 60% to 99%</li>
+                                <li>• Forms: Bricks, shapes, powders</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-accent font-semibold hover:underline">
+                            Learn more <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card card-hover bg-white rounded-lg shadow-md overflow-hidden metal-border" data-category="sic-abrasives">
+                    <div class="relative">
+                        <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/b6688671fea7466fac87fe2c75536b7c~tplv-a9rns2rl98-image.image?rcl=20250825110145344AAECBAC534C60BD36&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695705&amp;x-signature=Wz%2BiKtjrvIGTrjF%2F4h8A5HGDZZo%3D" alt="SiC Grinding Wheels" class="w-full h-60 object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-semibold px-3 py-1 rounded-full">GSiC Abrasives</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Green Silicon Carbide</h3>
+                        <p class="text-gray-600 mb-4">Precision-engineered silicon carbide for metalworking, ceramics, and composite materials.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-1">Key Specifications:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• Diameter: 100mm to 600mm</li>
+                                <li>• Thickness: 3mm to 50mm</li>
+                                <li>• Various bonding types available</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-accent font-semibold hover:underline">
+                            Learn more <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card card-hover bg-white rounded-lg shadow-md overflow-hidden metal-border" data-category="alumina-refractories">
+                    <div class="relative">
+                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/9cf7318f4994420191f35533d5bac37c~tplv-a9rns2rl98-image.image?rcl=20250825110155344AAECBAC534C60C26D&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695715&amp;x-signature=SK%2FjYUQndFJGdXV2cdBnhcHjAcc%3D" alt="Alumina Insulation Bricks" class="w-full h-60 object-cover">
+                        <div class="absolute top-4 right-4 bg-accent text-white text-sm font-semibold px-3 py-1 rounded-full">GSIC Powder</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-2">Green Silicon Carbide Powder</h3>
+                        <p class="text-gray-600 mb-4">Green silicon carbide powder providing superior thermal insulation for semi-conductor use.</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-1">Key Specifications:</h4>
+                            <ul class="text-gray-600 text-sm space-y-1">
+                                <li>• Max temperature: 1600°C</li>
+                                <li>• Density: 0.8-1.2 g/cm³</li>
+                                <li>• Excellent thermal shock resistance</li>
+                            </ul>
+                        </div>
+                        <a href="#" class="inline-flex items-center text-accent font-semibold hover:underline">
+                            Learn more <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-primary mb-4">Industrial Applications</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    Our products are used in a wide range of industrial applications, providing reliable solutions for various manufacturing processes.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden metal-border">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/272858a46f214c079e28d7d426f839b6~tplv-a9rns2rl98-image.image?rcl=20250825110207E17CDEE816CC13057E64&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695727&amp;x-signature=nQigo0J4rYRsl2xCc0XodPhI1Zc%3D" alt="Metalworking industry application" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Metalworking Industry</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our abrasives are widely used in metal fabrication, providing precise grinding, polishing, and surface finishing for various metal components.
+                        </p>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Stainless steel polishing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Carbon steel grinding</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Aluminum surface treatment</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden metal-border">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/3518d47ac7734dd183a5e4903d082507~tplv-a9rns2rl98-image.image?rcl=2025082511021572E021C2C4B7A503FC51&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695735&amp;x-signature=8Ri1%2BAXQqBn1QDxbAzZB%2BnAjs%2Fw%3D" alt="Ceramics industry application" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Ceramics Industry</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our refractory products provide essential heat resistance and structural integrity in ceramic kilns and manufacturing processes.
+                        </p>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Kiln linings and components</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Ceramic tile production</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Advanced ceramic manufacturing</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden metal-border">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/8831eb9721334b1e83d615c05e977f21~tplv-a9rns2rl98-image.image?rcl=202508251105591B7FAE278496F20FD84F&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695959&amp;x-signature=RoFTmOa09K2mvYThRu2zJiH%2B7HI%3D" alt="Automotive industry application" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Automotive Industry</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our materials are used in various automotive manufacturing processes, from engine component production to surface finishing.
+                        </p>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Engine part grinding</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Automotive body polishing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Heat treatment furnaces</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card-hover bg-white rounded-lg shadow-lg overflow-hidden metal-border">
+                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/e6be778913734c63b2bc4d179ba7dffb~tplv-a9rns2rl98-image.image?rcl=20250825110610CD74DE4E46FC3727A3E7&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756695970&amp;x-signature=vFOpFMDwJ%2BnrbebALdXRjCIdrNU%3D" alt="Aerospace industry application" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-primary mb-3">Aerospace Industry</h3>
+                        <p class="text-gray-600 mb-4">
+                            Our high-precision abrasives and high-temperature refractories meet the stringent requirements of the aerospace industry.
+                        </p>
+                        <ul class="text-gray-600 space-y-2 mb-6">
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Turbine component finishing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>Aerospace alloy processing</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-accent mr-2"></i>
+                                <span>High-temperature furnace linings</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="mt-20">
+                <h3 class="text-2xl font-bold text-primary text-center mb-10">What Our Clients Say</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-light p-6 rounded-lg shadow-md card-hover metal-border">
+                        <div class="flex items-center mb-4">
+                            <div class="text-accent">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-6">
+                            "Start Ocean's silicon carbide abrasives have significantly improved our production efficiency. The quality is consistently excellent."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/id/1005/100/100" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold text-primary">John Smith</h4>
+                                <p class="text-gray-500 text-sm">Production Manager, MetalWorks Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-light p-6 rounded-lg shadow-md card-hover metal-border">
+                        <div class="flex items-center mb-4">
+                            <div class="text-accent">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-6">
+                            "We've been using Start Ocean's refractory products for years. Their reliability and performance in high-temperature environments are unmatched."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/id/1012/100/100" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold text-primary">Sarah Johnson</h4>
+                                <p class="text-gray-500 text-sm">Plant Director, CeramicTech</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-light p-6 rounded-lg shadow-md card-hover metal-border">
+                        <div class="flex items-center mb-4">
+                            <div class="text-accent">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 italic mb-6">
+                            "The technical support provided by Start Ocean, combined with their high-quality alumina products, has been instrumental in our manufacturing success."
+                        </p>
+                        <div class="flex items-center">
+                            <img src="https://picsum.photos/id/1025/100/100" alt="Client" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-semibold text-primary">Michael Chen</h4>
+                                <p class="text-gray-500 text-sm">Engineering Manager, AutoParts Ltd.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,4vw,2.5rem)] font-bold text-primary mb-4">Contact Us</h2>
+                <div class="w-20 h-1 bg-accent mx-auto mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    We're ready to assist you with your industrial material needs. Get in touch with us for inquiries or to request a quote.
+                </p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2">
+                    <div class="bg-white p-8 rounded-lg shadow-lg h-full metal-border">
+                        <h3 class="text-2xl font-bold text-primary mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fa fa-map-marker text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-primary mb-1">Address</h4>
+                                    <p class="text-gray-600">
+                                        NO. 2-6 JIXIAN RD HUAIAN ECO-TECH DEVELOPMENT ZONE<br>
+                                        HUAIAN CHINA
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fa fa-phone text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-primary mb-1">Phone</h4>
+                                    <p class="text-gray-600">+86 187 9553 3747</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fa fa-envelope text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-primary mb-1">Email</h4>
+                                    <p class="text-gray-600">sinosic@qq.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-semibold text-primary mb-4">Business Hours</h4>
+                            <p class="text-gray-600 mb-2">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p class="text-gray-600">Saturday: 9:00 AM - 12:00 PM</p>
+                        </div>
+                        
+                        <div class="mt-10">
+                            <h4 class="font-semibold text-primary mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="bg-primary text-white p-3 rounded-full hover:bg-primary/90 transition-custom">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#" class="bg-primary text-white p-3 rounded-full hover:bg-primary/90 transition-custom">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#" class="bg-primary text-white p-3 rounded-full hover:bg-primary/90 transition-custom">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#" class="bg-primary text-white p-3 rounded-full hover:bg-primary/90 transition-custom">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact form has been removed as requested -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Start Ocean Industrial Limited</h4>
+                    <p class="text-white/80 mb-4">
+                        Leading manufacturer of high-quality industrial abrasives and refractories for various applications worldwide.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white/80 hover:text-white transition-custom">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-white/80 hover:text-white transition-custom">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-white/80 hover:text-white transition-custom">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white/80 hover:text-white transition-custom">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-white/80 hover:text-white transition-custom">Home</a></li>
+                        <li><a href="#products" class="text-white/80 hover:text-white transition-custom">Products</a></li>
+                        <li><a href="#applications" class="text-white/80 hover:text-white transition-custom">Applications</a></li>
+                        <li><a href="#contact" class="text-white/80 hover:text-white transition-custom">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Product Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-white/80 hover:text-white transition-custom">SiC Abrasives</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-custom">SiC Refractories</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-custom">Alumina Abrasives</a></li>
+                        <li><a href="#" class="text-white/80 hover:text-white transition-custom">Alumina Refractories</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fa fa-map-marker mt-1 mr-3 text-white/80"></i>
+                            <span class="text-white/80">NO. 2-6 JIXIAN RD HUAIAN ECO-TECH DEVELOPMENT ZONE, HUAIAN CHINA</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-phone mr-3 text-white/80"></i>
+                            <span class="text-white/80">+86 187 9553 3747</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa fa-envelope mr-3 text-white/80"></i>
+                            <span class="text-white/80">sinosic@qq.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 pt-8 text-center text-white/60 text-sm">
+                <p>© 2023 Start Ocean Industrial Limited. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-scrolled');
+            } else {
+                navbar.classList.remove('nav-scrolled');
+            }
+        });
+        
+        // Product filtering
+        const filterButtons = document.querySelectorAll('.product-filter');
+        const productCards = document.querySelectorAll('.product-card');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'metal-button', 'text-white');
+                    btn.classList.add('bg-gray-200', 'text-gray-700');
+                });
+                
+                // Add active class to clicked button
+                button.classList.add('active', 'metal-button', 'text-white');
+                button.classList.remove('bg-gray-200', 'text-gray-700');
+                
+                const filter = button.textContent.trim().toLowerCase();
+                
+                productCards.forEach(card => {
+                    if (filter === 'all products') {
+                        card.style.display = 'block';
+                    } else {
+                        const category = card.dataset.category.replace('-', ' ');
+                        if (category.includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+
+
+    </body></html>
