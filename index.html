@@ -1,847 +1,91 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Ocean Industrial Limited</title>
-    <meta name="description" content="Manufacturer of SiC and alumina abrasives and refractories">
-    <!-- 精简外部资源 -->
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        /* 极简CSS，减少渲染阻塞 */
-        :root {
-            --primary: #2c3e50;
-            --accent: #3498db;
-            --light: #f8f9fa;
-            --gray: #7f8c8d;
-            --border: #e0e0e0;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            color: var(--primary);
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* 头部样式 */
-        header {
-            background: white;
-            border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--primary);
-            text-decoration: none;
-        }
-        
-        .logo img {
-            height: 40px;
-            width: auto;
-        }
-        
-        /* 导航样式 */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        nav a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        nav a:hover {
-            color: var(--accent);
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        /* 英雄区域 */
-        .hero {
-            padding: 60px 0;
-            background: var(--light);
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        
-        .hero-text h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
-        
-        .hero-text p {
-            color: var(--gray);
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--accent);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-        
-        .btn:hover {
-            background: #2980b9;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-        
-        /* 公司简介 */
-        .company-overview {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        .section-title h2 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-        
-        .section-title p {
-            color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .feature {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .feature-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 15px;
-        }
-        
-        .feature h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .feature p {
-            color: var(--gray);
-            font-size: 0.95rem;
-        }
-        
-        /* 产品页面 */
-        #products {
-            padding: 60px 0;
-            background: var(--light);
-        }
-        
-        .product-filters {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .filter-btn {
-            background: white;
-            border: 1px solid var(--border);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .filter-btn.active {
-            background: var(--accent);
-            color: white;
-            border-color: var(--accent);
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        
-        .product-image img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .product-info {
-            padding: 20px;
-        }
-        
-        .product-info h3 {
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        
-        .product-info p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-        
-        .product-specs {
-            font-size: 0.9rem;
-            color: var(--primary);
-        }
-        
-        .product-specs span {
-            font-weight: 500;
-        }
-        
-        /* 应用页面 */
-        #applications {
-            padding: 60px 0;
-        }
-        
-        .applications-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .application-card {
-            background: var(--light);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .application-image img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        
-        .application-info {
-            padding: 20px;
-        }
-        
-        .application-info h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        .application-info p {
-            color: var(--gray);
-            margin-bottom: 20px;
-        }
-        
-        .application-info ul {
-            list-style-position: inside;
-            color: var(--gray);
-        }
-        
-        .application-info li {
-            margin-bottom: 8px;
-        }
-        
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial {
-            background: var(--light);
-            padding: 20px;
-            border-radius: 4px;
-        }
-        
-        .testimonial-stars {
-            color: #f39c12;
-            margin-bottom: 10px;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            color: var(--gray);
-            margin-bottom: 15px;
-        }
-        
-        .testimonial-author {
-            font-weight: 500;
-        }
-        
-        /* 联系页面 */
-        #contact {
-            padding: 60px 0;
-            background: var(--light);
-        }
-        
-        .contact-card {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 4px;
-            overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-        
-        .contact-info, .contact-hours {
-            padding: 30px;
-        }
-        
-        .contact-info h3, .contact-hours h3 {
-            margin-bottom: 20px;
-            font-size: 1.3rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            margin-bottom: 20px;
-        }
-        
-        .contact-icon {
-            color: var(--accent);
-            margin-right: 15px;
-            font-size: 1.2rem;
-            min-width: 20px;
-        }
-        
-        .contact-details h4 {
-            font-size: 0.9rem;
-            color: var(--gray);
-            margin-bottom: 5px;
-        }
-        
-        .contact-details p {
-            font-weight: 500;
-        }
-        
-        .business-hours {
-            background: var(--light);
-            padding: 20px;
-            border-radius: 4px;
-        }
-        
-        .business-hours ul {
-            list-style: none;
-        }
-        
-        .business-hours li {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-        
-        .social-links {
-            margin-top: 30px;
-        }
-        
-        .social-links h4 {
-            margin-bottom: 15px;
-            font-size: 1rem;
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-        
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: var(--accent);
-            color: white;
-            border-radius: 50%;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
-        
-        .social-icon:hover {
-            background: #2980b9;
-        }
-        
-        /* 页脚 */
-        footer {
-            background: var(--primary);
-            color: white;
-            padding: 40px 0 20px;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .footer-column h4 {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-        
-        .footer-column ul {
-            list-style: none;
-        }
-        
-        .footer-column li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-column a {
-            color: rgba(255, 255, 255, 0.8);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        .footer-column a:hover {
-            color: white;
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-        
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero-text {
-                order: 1;
-            }
-            
-            .hero-image {
-                order: 0;
-            }
-            
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                background: white;
-                flex-direction: column;
-                gap: 0;
-                border-bottom: 1px solid var(--border);
-            }
-            
-            nav ul.show {
-                display: flex;
-            }
-            
-            nav li {
-                border-top: 1px solid var(--border);
-            }
-            
-            nav a {
-                display: block;
-                padding: 15px 20px;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        /* 图片懒加载 */
-        .lazyload {
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .lazyload.loaded {
-            opacity: 1;
-        }
-    </style>
+    <title>Star Ocean Industrial Limited - Professional Abrasive Supplier</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- 头部 -->
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#home" class="logo">
-                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/4574d9f26ab54218b8f8d35b214f3e7b~tplv-a9rns2rl98-image.image?rcl=20250827100043593E2C6512252864A43F&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756864843&amp;x-signature=c4unGX%2Fig7ftM796yF0irvgQoFk%3D" alt="Star Ocean Logo">
-                    <span>Star Ocean Industrial Limited</span>
-                </a>
-                
-                <button class="mobile-menu-btn" aria-label="Toggle menu">
-                    <i class="fa fa-bars"></i>
-                </button>
-                
+                <div class="logo">
+                    <img src="images/logo.png" alt="Star Ocean Industrial Limited Logo">
+                    <h1>Star Ocean Industrial Limited</h1>
+                </div>
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Product</a></li>
-                        <li><a href="#applications">Application</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="applications.html">Applications</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- 首页/Hero区域 -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Advanced Industrial Materials Solutions</h1>
-                    <p>Specializing in high-quality silicon carbide and alumina-based abrasives and refractories for industrial applications worldwide.</p>
-                    <a href="#products" class="btn">Explore Products</a>
+    <section class="banner">
+        <div class="slides">
+            <div class="slide" style="background-image: url('images/banner1.jpg');">
+                <div class="slide-overlay">
+                    <h2>Premium Abrasive Materials</h2>
+                    <p>High-quality abrasive solutions for industrial applications</p>
                 </div>
-                <div class="hero-image">
-                    <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/541ed3d8a1d14c53b08d1a3ff12fb34c~tplv-a9rns2rl98-image.image?rcl=20250827100103107061A7628D2F7E7DBF&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756864864&amp;x-signature=%2B5fQW1Z07dMll09ZhzlDN%2BhH%2BuQ%3D" alt="Industrial materials production" class="lazyload">
+            </div>
+            <div class="slide" style="background-image: url('images/banner2.jpg');">
+                <div class="slide-overlay">
+                    <h2>Global Supplier</h2>
+                    <p>Serving clients worldwide with reliable abrasive products</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('images/banner3.jpg');">
+                <div class="slide-overlay">
+                    <h2>Technical Expertise</h2>
+                    <p>Over 15 years of experience in abrasive manufacturing</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('images/banner4.jpg');">
+                <div class="slide-overlay">
+                    <h2>Quality Assurance</h2>
+                    <p>Strict quality control for consistent performance</p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- 公司简介 -->
-    <section class="company-overview">
-        <div class="container">
-            <div class="section-title">
-                <h2>About Our Company</h2>
-                <p>Star Ocean Industrial Limited is a leading manufacturer of industrial materials, committed to providing high-quality products and reliable solutions to customers worldwide.</p>
-            </div>
-            
-            <div class="features">
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fa fa-check-circle"></i>
-                    </div>
-                    <h3>Quality Assurance</h3>
-                    <p>Strict quality control processes ensure consistent product performance and reliability.</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fa fa-globe"></i>
-                    </div>
-                    <h3>Global Distribution</h3>
-                    <p>Supplying industrial materials to customers across the globe with efficient logistics.</p>
-                </div>
-                
-                <div class="feature">
-                    <div class="feature-icon">
-                        <i class="fa fa-cogs"></i>
-                    </div>
-                    <h3>Advanced Technology</h3>
-                    <p>Utilizing modern production techniques to create superior industrial materials.</p>
-                </div>
-            </div>
+        <div class="slide-controls">
+            <div class="slide-control active" data-index="0"></div>
+            <div class="slide-control" data-index="1"></div>
+            <div class="slide-control" data-index="2"></div>
+            <div class="slide-control" data-index="3"></div>
         </div>
     </section>
 
-    <!-- 产品页面 -->
-    <section id="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Products</h2>
-                <p>A comprehensive range of high-quality industrial materials designed for various applications.</p>
-            </div>
-            
-            <div class="product-filters">
-                <button class="filter-btn active" data-filter="all">All Products</button>
-                <button class="filter-btn" data-filter="sic-abrasives">SiC Abrasives</button>
-                <button class="filter-btn" data-filter="sic-refractories">SiC Refractories</button>
-                <button class="filter-btn" data-filter="alumina-abrasives">Alumina Abrasives</button>
-                <button class="filter-btn" data-filter="alumina-refractories">Alumina Refractories</button>
-            </div>
-            
-            <div class="products-grid">
-                <!-- 产品1 -->
-                <div class="product-card" data-category="sic-abrasives">
-                    <div class="product-image">
-                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/0ab644a8d2d64e3e905226cbd1014b9e~tplv-a9rns2rl98-image.image?rcl=20250827100121B3BF1204F4E904DB315D&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756864882&amp;x-signature=seME%2Fxg3dQhP4GmSQVAZXoCy%2FkE%3D" alt="Silicon Carbide Abrasives" class="lazyload">
-                    </div>
-                    <div class="product-info">
-                        <h3>SiC Abrasives</h3>
-                        <p>High-performance silicon carbide abrasives for precision grinding applications.</p>
-                        <div class="product-specs">
-                            <p><span>Grit sizes:</span> 8# to 2000#</p>
-                            <p><span>Purity:</span> 98% to 99%</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 产品2 -->
-                <div class="product-card" data-category="sic-refractories">
-                    <div class="product-image">
-                        <img src="https://p9-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/83cc83dc808c48dea127349c7595e267~tplv-a9rns2rl98-image.image?rcl=2025082710013825ADDE1E45500ECCB0BC&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756864898&amp;x-signature=6%2Fw6OZ8ygND4sV3Pi%2BDOeyA8JB0%3D" alt="Silicon Carbide Refractories" class="lazyload">
-                    </div>
-                    <div class="product-info">
-                        <h3>SiC Refractories</h3>
-                        <p>Durable silicon carbide refractories for high-temperature applications.</p>
-                        <div class="product-specs">
-                            <p><span>Max temp:</span> 1600°C</p>
-                            <p><span>Forms:</span> Bricks, castables</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 产品3 -->
-                <div class="product-card" data-category="alumina-abrasives">
-                    <div class="product-image">
-                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/cca449275dad4f50b1443aca65a58bcb~tplv-a9rns2rl98-image.image?rcl=20250827100156F3195EA663A4437ACF2C&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756864916&amp;x-signature=b9Xwy1AteVQ76akOJpPQw%2BfzdHw%3D" alt="Alumina Abrasives" class="lazyload">
-                    </div>
-                    <div class="product-info">
-                        <h3>Alumina Abrasives</h3>
-                        <p>High-purity alumina abrasives for surface preparation and finishing.</p>
-                        <div class="product-specs">
-                            <p><span>Grit sizes:</span> 12# to 5000#</p>
-                            <p><span>Purity:</span> 85% to 99.5%</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- 产品4 -->
-                <div class="product-card" data-category="alumina-refractories">
-                    <div class="product-image">
-                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/bd8e1d34985f41f2a99dd5d4060c69e2~tplv-a9rns2rl98-image.image?rcl=20250827100207AE526887AB00958C4D75&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756864928&amp;x-signature=ycj1JBA7THJkYbT2p4QZjLFknrg%3D" alt="Alumina Refractories" class="lazyload">
-                    </div>
-                    <div class="product-info">
-                        <h3>Alumina Refractories</h3>
-                        <p>Premium alumina refractory products for extreme environments.</p>
-                        <div class="product-specs">
-                            <p><span>Max temp:</span> 1800°C</p>
-                            <p><span>Alumina content:</span> 60% to 99%</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 应用页面 -->
-    <section id="applications">
-        <div class="container">
-            <div class="section-title">
-                <h2>Industrial Applications</h2>
-                <p>Our products are used in a wide range of industrial applications, providing reliable solutions for various manufacturing processes.</p>
-            </div>
-            
-            <div class="applications-grid">
-                <div class="application-card">
-                    <div class="application-image">
-                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/0ee372d7408a47adbad020de97786017~tplv-a9rns2rl98-image.image?rcl=202508271002358F0A50AC84C9C171EFEA&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756864955&amp;x-signature=Vkf7yMSFM8FbheC3GYH0nPagb%2FU%3D" alt="Metalworking application" class="lazyload">
-                    </div>
-                    <div class="application-info">
-                        <h3>Metalworking Industry</h3>
-                        <p>Our abrasives provide precise grinding, polishing, and surface finishing for various metal components in automotive and aerospace manufacturing.</p>
-                        <ul>
-                            <li>Stainless steel polishing</li>
-                            <li>Carbon steel grinding</li>
-                            <li>Precision component finishing</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="application-card">
-                    <div class="application-image">
-                        <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/code_assistant/0886394a40f949808f35f1f3be741fe7~tplv-a9rns2rl98-image.image?rcl=20250827100250D5B2DB43C907E2E16776&amp;rk3s=8e244e95&amp;rrcfp=e75484ac&amp;x-expires=1756864970&amp;x-signature=ZyhKTrF466qfd8xhdhv5uxnuOEk%3D" alt="Ceramics industry application" class="lazyload">
-                    </div>
-                    <div class="application-info">
-                        <h3>Ceramics Industry</h3>
-                        <p>Our refractory products provide essential heat resistance and structural integrity in ceramic kilns and high-temperature manufacturing processes.</p>
-                        <ul>
-                            <li>Kiln linings and components</li>
-                            <li>Ceramic tile production</li>
-                            <li>High-temperature processing</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="section-title">
-                <h2>What Our Clients Say</h2>
-            </div>
-            
-            <div class="testimonials">
-                <div class="testimonial">
-                    <div class="testimonial-stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Star Ocean's silicon carbide products have significantly improved our production efficiency and product quality."</p>
-                    <p class="testimonial-author">— Manufacturing Director, Europe</p>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                    </div>
-                    <p class="testimonial-text">"Reliable products and excellent service. We've been working with Star Ocean for over 5 years."</p>
-                    <p class="testimonial-author">— Procurement Manager, Asia</p>
-                </div>
-                
-                <div class="testimonial">
-                    <div class="testimonial-stars">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star-half-o"></i>
-                    </div>
-                    <p class="testimonial-text">"The refractory materials from Star Ocean have exceeded our expectations in high-temperature applications."</p>
-                    <p class="testimonial-author">— Plant Engineer, North America</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系页面 -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>For inquiries about our products or to discuss your specific requirements, please contact us using the information below.</p>
-            </div>
-            
-            <div class="contact-card">
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h3>Contact Information</h3>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fa fa-map-marker"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Address</h4>
-                                <p>NO. 2-6 JIXIAN RD<br>HUAIAN ECO-TECH DEVELOPMENT ZONE<br>HUAIAN CHINA</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fa fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <p>+86 187 9553 3747</p>
-                            </div>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fa fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <p>sinosic@qq.com</p>
-                            </div>
-                        </div>
-                    </div>
+    <section class="container">
+        <div class="welcome-section">
+            <h2 class="section-title">Welcome to Star Ocean Industrial Limited</h2>
+            <div class="welcome-content">
+                <div class="welcome-text">
+                    <p><strong>Star Ocean Industrial Limited</strong> is a leading manufacturer and supplier of high-quality abrasive materials with over 15 years of industry experience. Based in Lianyungang, Jiangsu Province, we specialize in producing premium abrasive products that meet the highest international standards.</p>
                     
-                    <div class="contact-hours">
-                        <h3>Business Hours</h3>
-                        <div class="business-hours">
-                            <ul>
-                                <li><span>Monday - Friday:</span> <span>8:00 AM - 6:00 PM</span></li>
-                                <li><span>Saturday:</span> <span>9:00 AM - 12:00 PM</span></li>
-                                <li><span>Sunday:</span> <span>Closed</span></li>
-                            </ul>
+                    <p>Our comprehensive product range includes <strong>Black Silicon Carbide</strong>, <strong>Brown Aluminum Oxide</strong>, <strong>White Aluminum Oxide</strong>, and specialized <strong>Refractory Materials</strong>. These products are essential components in various industrial applications including metalworking, construction, automotive, and manufacturing sectors.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h3>🛡️ Quality Commitment</h3>
+                            <p>Every product undergoes rigorous quality testing to ensure superior performance and durability.</p>
                         </div>
-                        
-                        <div class="social-links">
-                            <h4>Follow Us</h4>
-                            <div class="social-icons">
-                                <a href="#" class="social-icon" aria-label="LinkedIn">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                                <a href="#" class="social-icon" aria-label="Facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#" class="social-icon" aria-label="Twitter">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                            </div>
+                        <div class="feature-item">
+                            <h3>🌍 Global Reach</h3>
+                            <p>We export to over 30 countries worldwide, building lasting partnerships with our clients.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>🔧 Technical Support</h3>
+                            <p>Our expert team provides comprehensive technical assistance and customized solutions.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>⚡ Fast Delivery</h3>
+                            <p>Efficient logistics network ensures timely delivery to meet your production schedules.</p>
                         </div>
                     </div>
                 </div>
@@ -849,131 +93,107 @@
         </div>
     </section>
 
-    <!-- 页脚 -->
+    <section class="highlight-products">
+        <div class="container">
+            <h2 class="section-title">Our Featured Products</h2>
+            <div class="products-preview">
+                <div class="product-preview-card">
+                    <img src="images/black-silicon-carbide.jpg" alt="Black Silicon Carbide">
+                    <h3>Black Silicon Carbide</h3>
+                    <p>Exceptional hardness and cutting performance for demanding applications.</p>
+                    <a href="products.html" class="btn">Learn More</a>
+                </div>
+                <div class="product-preview-card">
+                    <img src="images/brown-aluminum-oxide.jpg" alt="Brown Aluminum Oxide">
+                    <h3>Brown Aluminum Oxide</h3>
+                    <p>High toughness and durability for heavy-duty grinding operations.</p>
+                    <a href="products.html" class="btn">Learn More</a>
+                </div>
+                <div class="product-preview-card">
+                    <img src="images/white-aluminum-oxide.jpg" alt="White Aluminum Oxide">
+                    <h3>White Aluminum Oxide</h3>
+                    <p>Premium purity for precision grinding and fine finishing applications.</p>
+                    <a href="products.html" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <div class="container">
+            <h2 class="section-title">Why Choose Star Ocean?</h2>
+            <div class="advantages">
+                <div class="advantage">
+                    <h3>🏭 Manufacturing Excellence</h3>
+                    <p>State-of-the-art production facilities with advanced quality control systems ensure consistent product quality batch after batch.</p>
+                </div>
+                <div class="advantage">
+                    <h3>📊 Custom Solutions</h3>
+                    <p>We work closely with clients to develop customized abrasive solutions tailored to specific application requirements.</p>
+                </div>
+                <div class="advantage">
+                    <h3>💰 Competitive Pricing</h3>
+                    <p>Direct manufacturing capabilities allow us to offer competitive pricing without compromising on quality.</p>
+                </div>
+                <div class="advantage">
+                    <h3>🌱 Sustainable Practices</h3>
+                    <p>Committed to environmentally responsible manufacturing processes and sustainable business practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="industry-applications">
+        <div class="container">
+            <h2 class="section-title">Industry Applications</h2>
+            <div class="applications-grid">
+                <div class="application">
+                    <h3>Metalworking Industry</h3>
+                    <p>Grinding, cutting, and polishing of various metals and alloys</p>
+                </div>
+                <div class="application">
+                    <h3>Construction Materials</h3>
+                    <p>Surface preparation and finishing of building materials</p>
+                </div>
+                <div class="application">
+                    <h3>Automotive Sector</h3>
+                    <p>Component manufacturing and surface treatment</p>
+                </div>
+                <div class="application">
+                    <h3>Glass & Ceramics</h3>
+                    <p>Precision grinding and edge finishing</p>
+                </div>
+            </div>
+            <div class="cta-section">
+                <h3>Ready to Enhance Your Operations?</h3>
+                <p>Contact us today to discuss your abrasive material requirements and discover how our products can improve your manufacturing processes.</p>
+                <a href="contact.html" class="btn btn-large">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h4>Star Ocean</h4>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">High-quality industrial materials for global markets.</p>
+                <div class="footer-logo">
+                    <h2>Star Ocean Industrial Limited</h2>
+                    <p>Professional Abrasive Supplier Since 2008</p>
                 </div>
-                
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#applications">Applications</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                    </ul>
+                <div class="footer-contact">
+                    <p>📧 Email: roc@chinaabrasive.com</p>
+                    <p>📞 Phone: 008618795533747</p>
+                    <p>🌐 Website: www.chinaabrasive.com</p>
                 </div>
-                
-                <div class="footer-column">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="#products">SiC Abrasives</a></li>
-                        <li><a href="#products">SiC Refractories</a></li>
-                        <li><a href="#products">Alumina Abrasives</a></li>
-                        <li><a href="#products">Alumina Refractories</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-column">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li><a href="tel:+8618795533747">+86 187 9553 3747</a></li>
-                        <li><a href="mailto:sinosic@qq.com">sinosic@qq.com</a></li>
-                    </ul>
+                <div class="footer-address">
+                    <p>📍 Address: Haizhou District, Lianyungang 222000, Jiangsu Province, China</p>
                 </div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>© 2023 Star Ocean Industrial Limited. All rights reserved.</p>
+            <div class="copyright">
+                <p>&copy; 2023 Star Ocean Industrial Limited. All Rights Reserved. | Professional Abrasive Materials Supplier</p>
             </div>
         </div>
     </footer>
 
-    <!-- 极简JavaScript，确保快速加载 -->
-    <script>
-        // 移动菜单切换
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navMenu = document.querySelector('nav ul');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('show');
-        });
-        
-        // 产品筛选
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const productCards = document.querySelectorAll('.product-card');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // 更新按钮状态
-                filterBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                
-                const filter = btn.getAttribute('data-filter');
-                
-                // 筛选产品
-                productCards.forEach(card => {
-                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-        
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                // 关闭移动菜单（如果打开）
-                if (navMenu.classList.contains('show')) {
-                    navMenu.classList.remove('show');
-                }
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // 图片懒加载
-        document.addEventListener('DOMContentLoaded', () => {
-            const lazyImages = document.querySelectorAll('.lazyload');
-            
-            if ('IntersectionObserver' in window) {
-                const imageObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            const image = entry.target;
-                            image.classList.add('loaded');
-                            imageObserver.unobserve(image);
-                        }
-                    });
-                });
-                
-                lazyImages.forEach(image => {
-                    imageObserver.observe(image);
-                });
-            } else {
-                // 降级处理
-                lazyImages.forEach(image => {
-                    image.classList.add('loaded');
-                });
-            }
-        });
-    </script>
-
-
-    </body></html>
+    <script src="js/main.js"></script>
+</body>
+</html>
