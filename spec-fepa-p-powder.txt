@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Specifications - Star Ocean Industrial Limited</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .specifications-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .specifications-table th {
+            background-color: #1a5f7a;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .specifications-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .specifications-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .specifications-table tr:hover {
+            background-color: #f1f5f9;
+        }
+        
+        .grain-size {
+            font-weight: 600;
+            color: #1a5f7a;
+        }
+        
+        .spec-note {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f4fd;
+            border-left: 4px solid #1a5f7a;
+            font-size: 14px;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .specifications-table {
+                font-size: 14px;
+            }
+            
+            .specifications-table th,
+            .specifications-table td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    
+                    <h1>Star Ocean Industrial Limited</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="technical.html">Technical</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">Abrasive Grain Size Specifications</h2>
+        
+        <div class="table-container">
+            <table class="specifications-table">
+                <thead>
+                    <tr>
+                        <th>Grit Size</th>
+                        <th>Particle Size (μm)</th>
+                        <th>Application</th>
+                        <th>Standard</th>
+                        <th>Typical Usage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="grain-size">P12</td>
+                        <td>2000 - 1700</td>
+                        <td>Heavy grinding</td>
+                        <td>FEPA</td>
+                        <td>Rough grinding, cutting-off</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P16</td>
+                        <td>1700 - 1400</td>
+                        <td>Coarse grinding</td>
+                        <td>FEPA</td>
+                        <td>Stock removal</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P20</td>
+                        <td>1400 - 1180</td>
+                        <td>Coarse grinding</td>
+                        <td>FEPA</td>
+                        <td>Rough surface preparation</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P24</td>
+                        <td>1180 - 1000</td>
+                        <td>Medium grinding</td>
+                        <td>FEPA</td>
+                        <td>General purpose grinding</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P30</td>
+                        <td>1000 - 850</td>
+                        <td>Medium grinding</td>
+                        <td>FEPA</td>
+                        Surface grinding</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P36</td>
+                        <td>850 - 710</td>
+                        <td>Medium grinding</td>
+                        <td>FEPA</td>
+                        <td>Bench grinding</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P40</td>
+                        <td>710 - 600</td>
+                        <td>Fine grinding</td>
+                        <td>FEPA</td>
+                        <td>Precision grinding</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P50</td>
+                        <td>600 - 500</td>
+                        <td>Fine grinding</td>
+                        <td>FEPA</td>
+                        <td>Tool sharpening</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P60</td>
+                        <td>500 - 425</td>
+                        <td>Fine grinding</td>
+                        <td>FEPA</td>
+                        <td>Finishing operations</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P80</td>
+                        <td>425 - 355</td>
+                        <td>Very fine grinding</td>
+                        <td>FEPA</td>
+                        <td>Pre-finishing</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P100</td>
+                        <td>355 - 300</td>
+                        <td>Very fine grinding</td>
+                        <td>FEPA</td>
+                        <td>Fine finishing</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P120</td>
+                        <td>300 - 250</td>
+                        <td>Polishing</td>
+                        <td>FEPA</td>
+                        <td>Final finishing</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P150</td>
+                        <td>250 - 212</td>
+                        <td>Polishing</td>
+                        <td>FEPA</td>
+                        <td>Fine polishing</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P180</td>
+                        <td>212 - 180</td>
+                        <td>Super finishing</td>
+                        <td>FEPA</td>
+                        <td>Super finishing</td>
+                    </tr>
+                    <tr>
+                        <td class="grain-size">P220</td>
+                        <td>180 - 150</td>
+                        <td>Ultra finishing</td>
+                        <td>FEPA</td>
+                        <td>Ultra precision work</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="spec-note">
+            <strong>Note:</strong> All specifications conform to FEPA (Federation of European Producers of Abrasives) standards. 
+            Particle size ranges may vary slightly depending on specific product requirements and manufacturing processes.
+        </div>
+
+        <div id="specification-details">
+            <!-- 原有的JavaScript动态加载内容保持不变 -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Star Ocean Industrial Limited</h2>
+                    <p>Professional Abrasive Supplier</p>
+                </div>
+                <div class="footer-contact">
+                    <p>Email: roc@chinaabrasive.com</p>
+                    <p>Phone: 008618795533747</p>
+                    <p>Website: www.chinaabrasive.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Star Ocean Industrial Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/spec-details.js"></script>
+</body>
+</html>
