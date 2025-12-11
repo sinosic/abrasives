@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Star Ocean Industrial Limited</title>
     <link rel="stylesheet" href="css/style.css">
+<style>
+              h1 {
+            color: #0066cc;
+            text-align: center;
+        }
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], 
+        textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0055aa;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e6f7ff;
+            border-radius: 4px;
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -30,11 +81,74 @@
         <h2 class="section-title">Contact Us</h2>
         <div class="contact-info">
             <div class="contact-details">
-                <h3>Get in Touch</h3>
-                <p><strong>Contact Person:</strong> Roc Li</p>
-                <p><strong>Email:</strong> <a href="mailto:roc@chinaabrasive.com" class="email-link">roc@chinaabrasive.com</a></p>
-                <p><strong>Phone:</strong> 008618795533747</p>
-                <p><strong>Address:</strong> Haizhou District, Lianyungang 222000, Jiangsu Province, China</p>
+                 <h1>Inquiry Form</h1>
+    
+    <div class="form-container">
+        <div class="form-group">
+            <label for="product">Product Name:</label>
+            <input type="text" id="product" placeholder="e.g. BSIC GSIC WFA BFA etc.">
+        </div>
+        
+        <div class="form-group">
+            <label for="package">Packaging Requirements:</label>
+            <input type="text" id="package" placeholder="e.g. 25kg/bag, ton bag etc.">
+        </div>
+        
+        <div class="form-group">
+            <label for="quantity">Order Quantity:</label>
+            <input type="text" id="quantity" placeholder="e.g. 5 tons, 10 tons etc.">
+        </div>
+        
+        <div class="form-group">
+            <label for="additionalInfo">Additional Requirements (Optional):</label>
+            <textarea id="additionalInfo" placeholder="Enter any special requirements here..."></textarea>
+        </div>
+        
+        <button onclick="generateEmail()">Send Email</button>
+    </div>
+    
+    <div class="result" id="result">
+        <p>Your inquiry email is ready:</p>
+        <a id="emailLink" href="#"><button onclick>Click here to send email</button></a>
+    </div>
+
+    <script>
+        function generateEmail() {
+            // Get form values
+            const product = document.getElementById('product').value;
+            const package = document.getElementById('package').value;
+            const quantity = document.getElementById('quantity').value;
+            const additionalInfo = document.getElementById('additionalInfo').value;
+            
+            // Validate required fields
+            if (!product || !package || !quantity) {
+                alert('Please fill all required fields (Grit Number, Packaging Requirements, Order Quantity)');
+                return;
+            }
+            
+            // Build email body
+            let body = `Hello,\n\nI would like to know your price of ${product}.\n\n`;
+            body += `Our qualified package is ${package}.\n`;
+            body += `Order quantity is ${quantity}.\n`;
+            
+            if (additionalInfo) {
+                body += `\nAdditional requirements: ${additionalInfo}\n`;
+            }
+            
+            body += `\nBest regards,\n[Your Name]`;
+            
+            // Build mailto link
+            const subject = 'Enquiry - Black Silicon Carbide Price';
+            const mailtoLink = `mailto:roc@chinaabrasive.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Show result
+            document.getElementById('emailLink').href = mailtoLink;
+            document.getElementById('result').style.display = 'block';
+            
+            // Scroll to result
+            document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
             </div>
         </div>
     </section>
@@ -47,7 +161,7 @@
                     <p>Professional Abrasive Supplier</p>
                 </div>
                 <div class="footer-contact">
-                    <p>Email: roc@chinaabrasive.com</p>
+                    <p>Email:<a href="mailto:roc@chinaabrasive.com">roc@chinaabrasive.com</a></p>
                     <p>Phone: 008618795533747</p>
                     <p>Website: www.chinaabrasive.com</p>
                 </div>
